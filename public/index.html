@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect()
+
+            socket.on('pong', function () {
+                console.log('PONG!')
+            })
+
+            socket.emit('ping')
+        </script>
+    </body>
+</html>

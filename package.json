@@ -1,0 +1,36 @@
+{
+  "name": "leverage-plugin-socket.io",
+  "version": "1.0.0",
+  "description": "A socket.io plugin for Leverage",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakehamilton/leverage-plugin-socket.io.git"
+  },
+  "keywords": [
+    "leverage",
+    "http",
+    "server"
+  ],
+  "author": "Jake Hamilton <jehamilton122@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakehamilton/leverage-plugin-socket.io/issues"
+  },
+  "homepage": "https://github.com/jakehamilton/leverage-plugin-socket.io#readme",
+  "dependencies": {
+    "leverage-js": "1.x",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "express": "^4.15.3",
+    "leverage-plugin-http": "^1.0.3"
+  }
+}
