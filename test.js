@@ -7,7 +7,8 @@ manager.add(Component.of({
     config: {
         type: 'websocket',
         websocket: {
-            event: 'connect'
+            event: 'connect',
+            namespace: '/namespace'
         }
     },
     websocket (socket, io) {

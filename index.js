@@ -52,6 +52,10 @@ class WebSocket extends Plugin {
             this._createInstance(namespace)
         }
 
+        if (!this.events[namespace]) {
+            this.events[namespace] = {}
+        }
+
         let events = [].concat(component.__config__.websocket.event)
 
         for (let event of events) {
@@ -67,8 +71,16 @@ class WebSocket extends Plugin {
         this.instances[namespace] = io.of(namespace)
 
         this.instances[namespace].on('connect', socket => {
+            if (this.events[namespace].connect) {
+               for (let component of this.events[namespace].connect) {
+                   component.websocket(socket, io, 'connect')
+               }
+            }
+
             for (let event in this.events[namespace]) {
-                for (let component of this.events[event][namespace]) {
+                if (event === 'connect') continue
+
+                for (let component of this.events[namespace][event]) {
                     socket.on(event, (...args) => {
                         component.websocket(socket, this.instances[namespace], io, ...args)
                     })

@@ -8,7 +8,8 @@ Config
 
 ```js
 {
-    event: 'event-name'
+    event: 'event-name',
+    namespace: '/my-namespace' // optional
 }
 ```
 
@@ -28,7 +29,12 @@ class MyComponent extends Component {
         /*
          * Specify an event
          */
-        event: 'ping'
+        event: 'ping',
+
+        /*
+         * Optionally specify a namespace
+         */
+        namespace: '/my-namespace'
       }
     }
   }
